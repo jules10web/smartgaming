@@ -1,0 +1,59 @@
+// Define variables for colors and other properties
+$primary-color: #3498db;
+$background-color: #2c3e50;
+$text-color: #ecf0f1;
+
+// Navigation bar styles
+nav {
+  background-color: $background-color;
+  padding: 10px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+
+    li {
+      a {
+        text-decoration: none;
+        color: $text-color;
+        padding: 10px;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    // Toggler for responsive design
+    .toggler {
+      display: none;
+      cursor: pointer;
+    }
+
+    // Media query for responsive design
+    @media screen and (max-width: 768px) {
+      .toggler {
+        display: block;
+      }
+
+      li {
+        display: none;
+        width: 100%;
+        text-align: center;
+
+        &.active {
+          display: block;
+        }
+
+        a {
+          display: block;
+          padding: 10px;
+        }
+      }
+    }
+  }
+}
