@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+<div class="mb-3">
+    <label for="name" class="username">Username</label>
+    <input type="text" class="form-name" id="usename-input" placeholder="username">
+  </div>
+  <div class="mb-3">
+    <label for="inputState" class="form-label">State</label>
+    <select id="inputState" class="form-select" height="200">
+      <option selected>Choose...</option>
+      {% for screen in Screen%}
+      <div>
+        <option value="{{screen.id}}">{{screen.name}}</option>
+    </div>
+      {% endfor%}
+    </select>
+    <button class="submit">Submit</button>
+  </div>
+
+  {% endblock content %}

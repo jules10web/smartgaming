@@ -5,6 +5,11 @@
 <style>
 .card{
     display: grid ;
+    
+}
+.button{
+    background-color: aqua;
+    color:rgb(107, 119, 129)
 }
 
 </style>
@@ -18,7 +23,7 @@
                     <h5>{{room.id}} -- <a href="{% url 'room' room.id %}">{{room.name}}</a></h5>
                     <img src="{% static 'base/cod.jpg' %}" class="card-img-top" alt="This is a game">
                     <p class="card-text">{{room.description}}</p>
-                    <button class="button">Book</button>
+                    <a  href="{% url 'form'%}"><button class="button" >Book</button></a>
                 </div>               
         </div>
         {% endfor %}
