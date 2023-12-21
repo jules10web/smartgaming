@@ -21,12 +21,12 @@ def room(request,pk):
     return render(request, 'base/room.html',context)
 
 def screen(request,pk):
-    context:{'Screens': screen}
-    screen=Screen.objects.get(Screen.status)
-    return render(request,'base/screen.html')
+    screens=Screen.objects.all()
+    context:{'screens': screen}
+    return render(request,'base/screen.html',context)
 
 def form(request):
-    context:{'Screens': screen}
+    screens = Screen.objects.all()
     
-    return render(request,'base/form.html',{'form':form})
+    return render(request,'base/form.html',{'screens': screen})
 
