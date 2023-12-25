@@ -1,13 +1,5 @@
 {% extends 'main.html' %}
 {% block content%}
 <h1>screen display</h1>
-{% for screen in screens %}
-{% if screen.status == 'Active' %}
-<div>
-    
-<h1>{{screen.id}} -- {{screen.name}} -- {{screen.status}}</h1>
-
-</div>
-{% endif %}
-{% endfor %}
+<h1>{{screens.id}}-- {{screens.name}}-- {{screens.active}}</h1>
 {% endblock content%}

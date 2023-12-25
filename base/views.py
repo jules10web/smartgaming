@@ -11,22 +11,28 @@ from .models import Screen
 
 def home(request):
     rooms= Room.objects.all()
-    return render(request, 'base/home.html', {'rooms':rooms})
+    context= {'rooms':rooms}
+    return render(request, 'base/home.html',context)
+
+def screen(request):
+    screens=Screen.objects.all()
+    context={'screens': screens}
+    return render(request,'base/screen.html', context)
+
 
 def room(request,pk):
     
-    room=Room.objects.get(id=pk)
+    room=Room.objects.all()
     context={'room':room}
     
     return render(request, 'base/room.html',context)
 
-def screen(request,pk):
-    screens=Screen.objects.all()
-    context:{'screens': screen}
-    return render(request,'base/screen.html',context)
 
 def form(request):
     screens = Screen.objects.all()
-    
-    return render(request,'base/form.html',{'screens': screen})
+
+    if screens.isselected:
+        active= True
+   
+    return render(request,'base/form.html',{'screens': screens})
 

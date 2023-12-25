@@ -23,12 +23,13 @@
         <label for="inputState" class="form-label">Screen Status</label>
         <select id="inputState" class="form-select" height="200">
           <option selected>Choose...</option>
-          {% for screen in screens %}
-            {% if screen.status == "Active" %}
+          {% for screens in screens %}
+           
             
-              <option value= {{screen.id}} >{{screen.name}}</option>
+             {%if screens.active %}
           
-            {% endif %}
+             <option value= {{screen.id}} >{{screens.name}}</option>
+             {%endif%}
           {% endfor%}
         </select>
         <button class="submit">Submit</button>
