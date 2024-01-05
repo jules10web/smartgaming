@@ -3,7 +3,7 @@
 
 {% block content %}
 <style>
-.card{
+.container{
     display: grid ;
     
 }
@@ -16,18 +16,26 @@
 
 
 <h1>Smart Gamers</h1>
-<div class="card" style="height: 180px;">
-    <div class="row">
-        {% for room in rooms %}
-        <div class="col">
-                <div class="card-body">                        
-                    <h5>{{room.id}} -- <a href="{% url 'room' room.id %}">{{room.name}}</a></h5>
-                    <img src="{{room.image.url}} "class="card-img-top" alt="This is a game">
-                    <p class="card-text">{{room.description}}</p>
-                    <a  href="{% url 'form'%}"><button class="button" >Book</button></a>
-                </div>               
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a href="{% url 'login'%}"><button class="btn btn-primary me-md-2" value="login">Login</button></a>
+  
+    <a href="{% url 'sign'%}"><button class="btn btn-primary" value="signup">SignUp</button></a>
+  </div>
+
+  <div class="container">
+    <div class="card" style="height: 180px;">
+        <div class="row">
+            {% for room in rooms %}
+            <div class="col">
+                    <div class="card-body">                        
+                        <h5>{{room.id}} -- <a href="{% url 'room' room.id %}">{{room.name}}</a></h5>
+                        <img src="{{room.image.url}} "class="card-img-top" alt="This is a game">
+                        <p class="card-text">{{room.description}}</p>
+                        <a  href="{% url 'gamer_form'%}"><button class="button" >Book</button></a>
+                    </div>               
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 </div>
 {% endblock content %}

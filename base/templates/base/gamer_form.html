@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+  <form action="/gamer_form/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <a href="qrc.html"><input type="submit" value="Submit"></a>
+  </form>
+  
+
+{% endblock content %}
